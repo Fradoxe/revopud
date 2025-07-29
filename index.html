@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RevoPud (PUD) - Official Token</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0b0b0b;
+      color: #d4af37;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+      border-bottom: 1px solid #333;
+    }
+    header img {
+      width: 120px;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav button {
+      margin: 0 5px;
+      background: none;
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .cta-buttons a {
+      display: inline-block;
+      margin: 15px;
+      padding: 15px 30px;
+      background: #d4af37;
+      color: #0b0b0b;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .cta-buttons a:hover {
+      background: #b68c2d;
+    }
+    section {
+      margin: 40px auto;
+      max-width: 800px;
+    }
+    .roadmap div {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #d4af37;
+      border-radius: 10px;
+      background: rgba(255, 215, 0, 0.05);
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 0.9em;
+      border-top: 1px solid #333;
+    }
+    .socials a {
+      margin: 0 10px;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="A_logo_in_a_digital_vector_graphic_features_a_blac.png" alt="RevoPud Logo" />
+    <nav>
+      <button onclick="setLang('en')">English</button>
+      <button onclick="setLang('es')">Español</button>
+      <button onclick="setLang('fr')">Français</button>
+    </nav>
+  </header>
+
+  <section class="cta-buttons">
+    <h1 id="title">RevoPud (PUD)</h1>
+    <p id="buy-text">Buy PUD now on:</p>
+    <a href="https://pancakeswap.finance/swap?outputCurrency=0x3c12829b7c2eb0a8cfaa262603c15dd0c86f6ebe" target="_blank">PancakeSwap</a>
+    <a href="https://app.uniswap.org/#/swap?outputCurrency=0x3c12829b7c2eb0a8cfaa262603c15dd0c86f6ebe" target="_blank">Uniswap</a>
+  </section>
+
+  <section class="roadmap">
+    <h2 id="roadmap-title">Roadmap 2025 - 2026</h2>
+    <div><strong>Q3 2025:</strong> <span id="q3">Listing on DEXs & Airdrop for holders</span></div>
+    <div><strong>Q4 2025:</strong> <span id="q4">Marketing Campaign with influencers</span></div>
+    <div><strong>Q1 2026:</strong> <span id="q1">Staking Launch & Partnerships</span></div>
+    <div><strong>Q2 2026:</strong> <span id="q2">CEX Listing (CMC & CG)</span></div>
+  </section>
+
+  <section class="socials">
+    <h3 id="join">Join the community:</h3>
+    <a href="https://t.me/+gYNUMAq7Mco3M2Q8" target="_blank">Telegram</a>
+    <a href="https://x.com/PUD_Officiel" target="_blank">X (Twitter)</a>
+  </section>
+
+  <footer>
+    <p id="footer">© 2025 RevoPud. Decentralized and community-driven.</p>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        title: "RevoPud (PUD)",
+        buyText: "Buy PUD now on:",
+        roadmapTitle: "Roadmap 2025 - 2026",
+        q3: "Listing on DEXs & Airdrop for holders",
+        q4: "Marketing Campaign with influencers",
+        q1: "Staking Launch & Partnerships",
+        q2: "CEX Listing (CMC & CG)",
+        join: "Join the community:",
+        footer: "© 2025 RevoPud. Decentralized and community-driven."
+      },
+      es: {
+        title: "RevoPud (PUD)",
+        buyText: "Compra PUD ahora en:",
+        roadmapTitle: "Hoja de Ruta 2025 - 2026",
+        q3: "Listado en DEXs y Airdrop para holders",
+        q4: "Campaña de Marketing con influencers",
+        q1: "Lanzamiento de Staking y Alianzas",
+        q2: "Listado en CEX (CMC & CG)",
+        join: "Únete a la comunidad:",
+        footer: "© 2025 RevoPud. Descentralizado y dirigido por la comunidad."
+      },
+      fr: {
+        title: "RevoPud (PUD)",
+        buyText: "Achetez PUD dès maintenant sur :",
+        roadmapTitle: "Feuille de route 2025 - 2026",
+        q3: "Listing sur DEX et Airdrop pour les holders",
+        q4: "Campagne marketing avec influenceurs",
+        q1: "Lancement du Staking & Partenariats",
+        q2: "Listing sur CEX (CMC & CG)",
+        join: "Rejoignez la communauté :",
+        footer: "© 2025 RevoPud. Décentralisé et dirigé par la communauté."
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById('title').innerText = translations[lang].title;
+      document.getElementById('buy-text').innerText = translations[lang].buyText;
+      document.getElementById('roadmap-title').innerText = translations[lang].roadmapTitle;
+      document.getElementById('q3').innerText = translations[lang].q3;
+      document.getElementById('q4').innerText = translations[lang].q4;
+      document.getElementById('q1').innerText = translations[lang].q1;
+      document.getElementById('q2').innerText = translations[lang].q2;
+      document.getElementById('join').innerText = translations[lang].join;
+      document.getElementById('footer').innerText = translations[lang].footer;
+    }
+  </script>
+</body>
+</html>
