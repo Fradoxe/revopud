@@ -1,0 +1,5 @@
+cd chemin/vers/ton/projet
+mv /chemin/vers/ton/image/background.png .   # (copie dans le projet)
+git add background.png
+git commit -m "Ajout de l'image de fond"
+git push
