@@ -1,156 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RevoPud (PUD) - Official Token</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RevoPud (PUD)</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0b0b0b;
-      color: #d4af37;
-      text-align: center;
-    }
-    header {
-      padding: 20px;
-      border-bottom: 1px solid #333;
-    }
-    header img {
-      width: 120px;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav button {
-      margin: 0 5px;
-      background: none;
-      border: 1px solid #d4af37;
-      color: #d4af37;
-      padding: 5px 10px;
-      cursor: pointer;
-    }
-    .cta-buttons a {
-      display: inline-block;
-      margin: 15px;
-      padding: 15px 30px;
-      background: #d4af37;
-      color: #0b0b0b;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-    .cta-buttons a:hover {
-      background: #b68c2d;
-    }
-    section {
-      margin: 40px auto;
-      max-width: 800px;
-    }
-    .roadmap div {
-      margin: 20px 0;
-      padding: 20px;
-      border: 1px solid #d4af37;
-      border-radius: 10px;
-      background: rgba(255, 215, 0, 0.05);
-    }
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      font-size: 0.9em;
-      border-top: 1px solid #333;
-    }
-    .socials a {
-      margin: 0 10px;
-      color: #d4af37;
-      text-decoration: none;
-      font-size: 1.2em;
-    }
+    * {margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+    body {background:#000;color:#f5f5f5;line-height:1.6;}
+    header {position:fixed;top:0;left:0;width:100%;background:rgba(0,0,0,0.8);padding:10px 0;text-align:center;z-index:10;}
+    header nav a {color:#f5f5f5;margin:0 15px;text-decoration:none;font-weight:bold;transition:color 0.3s;}
+    header nav a:hover {color:gold;}
+    section {min-height:100vh;padding:100px 20px;text-align:center;}
+    h1, h2 {margin-bottom:20px;color:gold;text-shadow:0 0 15px #ffd700;}
+    .bg-pyramid {position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle,rgba(255,215,0,0.2),transparent),url('https://i.ibb.co/ncSKJkz/pyramid-bg.png') center/cover no-repeat;z-index:-1;opacity:0.3;}
+    .contract {margin:20px 0;font-size:1.1em;}
+    button.copy {background:gold;color:#000;padding:10px 20px;border:none;border-radius:5px;cursor:pointer;margin-top:10px;}
+    button.copy:hover {background:#d4af37;}
+    .buy-links a {display:inline-block;margin:10px;padding:15px 25px;background:gold;color:#000;font-weight:bold;text-decoration:none;border-radius:8px;transition:transform 0.2s;}
+    .buy-links a:hover {transform:scale(1.05);}
+    .lang-switch {margin-top:15px;}
+    .lang-switch button {margin:0 5px;padding:5px 10px;cursor:pointer;}
+    footer {padding:20px;text-align:center;background:#111;color:#999;}
   </style>
 </head>
 <body>
+  <div class="bg-pyramid"></div>
   <header>
-    <img src="A_logo_in_a_digital_vector_graphic_features_a_blac.png" alt="RevoPud Logo" />
     <nav>
-      <button onclick="setLang('en')">English</button>
-      <button onclick="setLang('es')">Español</button>
-      <button onclick="setLang('fr')">Français</button>
+      <a href="#home" data-lang="nav_home">Accueil</a>
+      <a href="#about" data-lang="nav_about">À propos</a>
+      <a href="#burn" data-lang="nav_burn">Burn & Récompenses</a>
+      <a href="#buy" data-lang="nav_buy">Acheter</a>
     </nav>
+    <div class="lang-switch">
+      <button onclick="setLang('fr')">FR</button>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('es')">ES</button>
+    </div>
   </header>
 
-  <section class="cta-buttons">
-    <h1 id="title">RevoPud (PUD)</h1>
-    <p id="buy-text">Buy PUD now on:</p>
-    <a href="https://pancakeswap.finance/swap?outputCurrency=0x3c12829b7c2eb0a8cfaa262603c15dd0c86f6ebe" target="_blank">PancakeSwap</a>
-    <a href="https://app.uniswap.org/#/swap?outputCurrency=0x3c12829b7c2eb0a8cfaa262603c15dd0c86f6ebe" target="_blank">Uniswap</a>
+  <section id="home">
+    <h1 data-lang="welcome">Bienvenue sur RevoPud (PUD)</h1>
+    <p data-lang="intro">Un cryptomonnaie innovante créée par un cryptocien.</p>
+    <div class="contract">
+      <strong data-lang="contract">Contrat :</strong> 
+      <span id="contract-address">0x3c12829b7c2eb0a8cfaa262603c15dd0c86f6ebe</span>
+      <br>
+      <button class="copy" onclick="copyContract()" data-lang="copy">Copier</button>
+    </div>
   </section>
 
-  <section class="roadmap">
-    <h2 id="roadmap-title">Roadmap 2025 - 2026</h2>
-    <div><strong>Q3 2025:</strong> <span id="q3">Listing on DEXs & Airdrop for holders</span></div>
-    <div><strong>Q4 2025:</strong> <span id="q4">Marketing Campaign with influencers</span></div>
-    <div><strong>Q1 2026:</strong> <span id="q1">Staking Launch & Partnerships</span></div>
-    <div><strong>Q2 2026:</strong> <span id="q2">CEX Listing (CMC & CG)</span></div>
+  <section id="about">
+    <h2 data-lang="about_title">À propos</h2>
+    <p data-lang="about_text">
+      RevoPud (PUD) est un token déflationniste et communautaire, pensé pour récompenser ses détenteurs.
+      Créé par un cryptocien passionné, il allie simplicité et innovation.
+    </p>
   </section>
 
-  <section class="socials">
-    <h3 id="join">Join the community:</h3>
-    <a href="https://t.me/+gYNUMAq7Mco3M2Q8" target="_blank">Telegram</a>
-    <a href="https://x.com/PUD_Officiel" target="_blank">X (Twitter)</a>
+  <section id="burn">
+    <h2 data-lang="burn_title">Burn & Récompenses</h2>
+    <p data-lang="burn_text">
+      Chaque transaction subit un burn de 1%, qui diminue de 0,05% tous les 30 jours, jusqu’à un minimum de 0,1%.
+      Les 100 premiers détenteurs reçoivent un bonus de 1% lors de leurs premières transactions.
+    </p>
+  </section>
+
+  <section id="buy">
+    <h2 data-lang="buy_title">Acheter PUD</h2>
+    <div class="buy-links">
+      <a href="https://pancakeswap.finance/swap?outputCurrency=0x3c12829b7c2eb0a8cfaa262603c15dd0c86f6ebe" target="_blank">PancakeSwap</a>
+      <a href="https://app.uniswap.org/#/swap?outputCurrency=0x3c12829b7c2eb0a8cfaa262603c15dd0c86f6ebe" target="_blank">Uniswap</a>
+    </div>
   </section>
 
   <footer>
-    <p id="footer">© 2025 RevoPud. Decentralized and community-driven.</p>
+    &copy; 2025 RevoPud - PUD. Tous droits réservés.
   </footer>
 
   <script>
+    function copyContract() {
+      const addr = document.getElementById('contract-address').innerText;
+      navigator.clipboard.writeText(addr);
+      alert("Adresse copiée !");
+    }
+
     const translations = {
+      fr: {
+        nav_home: "Accueil",
+        nav_about: "À propos",
+        nav_burn: "Burn & Récompenses",
+        nav_buy: "Acheter",
+        welcome: "Bienvenue sur RevoPud (PUD)",
+        intro: "Un cryptomonnaie innovante créée par un cryptocien.",
+        contract: "Contrat :",
+        copy: "Copier",
+        about_title: "À propos",
+        about_text: "RevoPud (PUD) est un token déflationniste et communautaire, pensé pour récompenser ses détenteurs. Créé par un cryptocien passionné, il allie simplicité et innovation.",
+        burn_title: "Burn & Récompenses",
+        burn_text: "Chaque transaction subit un burn de 1%, qui diminue de 0,05% tous les 30 jours, jusqu’à un minimum de 0,1%. Les 100 premiers détenteurs reçoivent un bonus de 1% lors de leurs premières transactions.",
+        buy_title: "Acheter PUD"
+      },
       en: {
-        title: "RevoPud (PUD)",
-        buyText: "Buy PUD now on:",
-        roadmapTitle: "Roadmap 2025 - 2026",
-        q3: "Listing on DEXs & Airdrop for holders",
-        q4: "Marketing Campaign with influencers",
-        q1: "Staking Launch & Partnerships",
-        q2: "CEX Listing (CMC & CG)",
-        join: "Join the community:",
-        footer: "© 2025 RevoPud. Decentralized and community-driven."
+        nav_home: "Home",
+        nav_about: "About",
+        nav_burn: "Burn & Rewards",
+        nav_buy: "Buy",
+        welcome: "Welcome to RevoPud (PUD)",
+        intro: "An innovative cryptocurrency created by a crypto enthusiast.",
+        contract: "Contract:",
+        copy: "Copy",
+        about_title: "About",
+        about_text: "RevoPud (PUD) is a deflationary and community-driven token designed to reward its holders. Created by a passionate crypto enthusiast, it combines simplicity and innovation.",
+        burn_title: "Burn & Rewards",
+        burn_text: "Each transaction burns 1%, decreasing by 0.05% every 30 days, down to a minimum of 0.1%. The first 100 holders receive a 1% bonus on their first transactions.",
+        buy_title: "Buy PUD"
       },
       es: {
-        title: "RevoPud (PUD)",
-        buyText: "Compra PUD ahora en:",
-        roadmapTitle: "Hoja de Ruta 2025 - 2026",
-        q3: "Listado en DEXs y Airdrop para holders",
-        q4: "Campaña de Marketing con influencers",
-        q1: "Lanzamiento de Staking y Alianzas",
-        q2: "Listado en CEX (CMC & CG)",
-        join: "Únete a la comunidad:",
-        footer: "© 2025 RevoPud. Descentralizado y dirigido por la comunidad."
-      },
-      fr: {
-        title: "RevoPud (PUD)",
-        buyText: "Achetez PUD dès maintenant sur :",
-        roadmapTitle: "Feuille de route 2025 - 2026",
-        q3: "Listing sur DEX et Airdrop pour les holders",
-        q4: "Campagne marketing avec influenceurs",
-        q1: "Lancement du Staking & Partenariats",
-        q2: "Listing sur CEX (CMC & CG)",
-        join: "Rejoignez la communauté :",
-        footer: "© 2025 RevoPud. Décentralisé et dirigé par la communauté."
+        nav_home: "Inicio",
+        nav_about: "Acerca de",
+        nav_burn: "Quema y Recompensas",
+        nav_buy: "Comprar",
+        welcome: "Bienvenido a RevoPud (PUD)",
+        intro: "Una criptomoneda innovadora creada por un entusiasta de las criptos.",
+        contract: "Contrato:",
+        copy: "Copiar",
+        about_title: "Acerca de",
+        about_text: "RevoPud (PUD) es un token deflacionario y comunitario, diseñado para recompensar a sus poseedores. Creado por un entusiasta de las criptomonedas, combina simplicidad e innovación.",
+        burn_title: "Quema y Recompensas",
+        burn_text: "Cada transacción quema un 1%, que disminuye un 0,05% cada 30 días, hasta un mínimo de 0,1%. Los primeros 100 poseedores reciben un bono del 1% en sus primeras transacciones.",
+        buy_title: "Comprar PUD"
       }
     };
 
     function setLang(lang) {
-      document.getElementById('title').innerText = translations[lang].title;
-      document.getElementById('buy-text').innerText = translations[lang].buyText;
-      document.getElementById('roadmap-title').innerText = translations[lang].roadmapTitle;
-      document.getElementById('q3').innerText = translations[lang].q3;
-      document.getElementById('q4').innerText = translations[lang].q4;
-      document.getElementById('q1').innerText = translations[lang].q1;
-      document.getElementById('q2').innerText = translations[lang].q2;
-      document.getElementById('join').innerText = translations[lang].join;
-      document.getElementById('footer').innerText = translations[lang].footer;
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        const key = el.getAttribute('data-lang');
+        if (translations[lang][key]) el.innerText = translations[lang][key];
+      });
     }
   </script>
 </body>
