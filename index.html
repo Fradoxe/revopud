@@ -1,6 +1,141 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RevoPud (PUD)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      background: url('revopud_1.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    header nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px 20px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      color: black;
+      background: gold;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .buttons a:hover {
+      background: #e5c100;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.7);
+      color: #aaa;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
+  <script>
+    // Gestion multilingue simple
+    const texts = {
+      fr: {
+        about: "À propos de RevoPud",
+        burn: "Chaque transaction brûle une petite partie des tokens, réduisant l'offre au fil du temps et augmentant la rareté.",
+        rewards: "Les 100 premiers détenteurs reçoivent un bonus automatique de 1%.",
+        buy: "Acheter PUD"
+      },
+      en: {
+        about: "About RevoPud",
+        burn: "Each transaction burns a small portion of tokens, reducing supply over time and increasing scarcity.",
+        rewards: "The first 100 holders receive an automatic 1% bonus.",
+        buy: "Buy PUD"
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById('about-title').textContent = texts[lang].about;
+      document.getElementById('burn-text').textContent = texts[lang].burn;
+      document.getElementById('rewards-text').textContent = texts[lang].rewards;
+      document.getElementById('buy-title').textContent = texts[lang].buy;
+    }
+  </script>
+</head>
+<body onload="setLang('fr')">
+
+  <header>
+    <div><strong>RevoPud (PUD)</strong></div>
+    <nav>
+      <a href="#about">À propos</a>
+      <a href="#burn">Burn</a>
+      <a href="#buy">Acheter</a>
+      <a href="#" onclick="setLang('fr')">FR</a> |
+      <a href="#" onclick="setLang('en')">EN</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h1 id="about-title"></h1>
+    <p id="rewards-text"></p>
+  </section>
+
+  <section id="burn">
+    <h1>Burn</h1>
+    <p id="burn-text"></p>
+  </section>
+
+  <section id="buy">
+    <h1 id="buy-title"></h1>
+    <div class="buttons">
+      <a href="https://pancakeswap.finance/swap?outputCurrency=0x3c12829b7c2eb0a8cfaa262603c15dd0c86f6ebe" target="_blank">PancakeSwap</a>
+      <a href="https://app.uniswap.org/#/swap?outputCurrency=0x3c12829b7c2eb0a8cfaa262603c15dd0c86f6ebe" target="_blank">Uniswap</a>
+    </div>
+  </section>
+
+  <footer>
+    Un cryptocien — RevoPud (PUD) &copy; 2025
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>RevoPud - Site sobre avec image intégrée</title>
